@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Error from "./Pages/Error";
 // import Singleproduct from './Pages/Singleproduct';
 import Navbar from "./components/Common/Navbar";
+import Footer from "./components/Common/Footer/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           {/* <Route path='/singleproduct/:id' element={<Singleproduct />} /> */}
           <Route path="*" element={<Error />} />
         </Routes>
+        <Footer/>
       </Router>
     </>
   );
