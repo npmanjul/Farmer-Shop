@@ -1,0 +1,199 @@
+.navbar-container {
+    height: 90px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.8s;
+    z-index: 100;
+    box-shadow: 0 0 13px -4px #0000002e;
+}
+
+.nav-icon img {
+    height: 30px;
+}
+
+.navigation-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-size: 17px;
+    text-decoration: none;
+    color: black;
+}
+
+.login-btn {
+    height: 20px;
+    width: auto;
+    background-color: blue;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* border-radius: 25px; */
+}
+
+.cart-container {
+    position: relative;
+}
+
+
+
+.cart-logo img {
+    height: 30px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+    padding: 4px;
+    font-weight: 600;
+}
+
+.active {
+    font-weight: bold;
+    color: rgb(75, 73, 206);
+}
+
+
+.menu-section {
+    display: none;
+}
+
+.menu-section img {
+    height: 30px;
+}
+
+.menu-section button {
+    background-color: white;
+    border: 0;
+    outline: none;
+
+}
+
+
+.Curtain_Menu {
+    display: none;
+}
+
+.overlay {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: auto;
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.overlay a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #272626;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: -11px;
+    right: 22px;
+    font-size: 62px;
+}
+
+@media (max-width:800px) {
+    .nav-container {
+        display: none;
+    }
+
+    .Curtain_Menu {
+        display: block;
+    }
+
+    .menu-section {
+        display: block;
+    }
+
+    .cart-container
+    {
+        margin-top: 1.5rem;
+    }
+
+    .cart-logo img {
+        height: 40px;
+    }
+
+    .cart-count {
+        top: 0px;
+        right: 32px;
+    }
+}
+
+
+@media (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+
+}
+
+.menu-top {
+    position: relative;
+    width: 100%;
+}
+
+.menu-top img {
+    position: absolute;
+    height: 30px;
+    top: 29px;
+    left: 32px;
+}
