@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <>
     <Blank/>
-      <div>Contact</div>
+      <div>Contact page</div>
     </>
   )
 }
