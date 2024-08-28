@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 import { google } from "../../assets/image";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "./firebase";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate=useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +20,8 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in successfully");
-      window.location.href = "/profile";
+      // window.location.href = "/profile";
+      navigate("/profile");
       toast.success("User logged in successfully!", {
         position: "top-center",
       });
@@ -54,7 +57,7 @@ const Login = () => {
       <Blank />
       <div className="login-wrapper">
         <div className="login-container">
-          <h2>Login</h2>
+          <h2 >Login</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">Email Address</label>
             <input
@@ -98,3 +101,4 @@ const Login = () => {
 };
 
 export default Login;
+  
