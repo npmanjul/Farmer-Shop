@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
-import { NavLink } from "react-router-dom";
-import {logo,menuLine,shoppingCart} from '../../assets/image'
+import { NavLink, Link } from "react-router-dom";
+import { logo, menuLine, shoppingCart } from '../../assets/image'
 
 
 const Navbar = () => {
+
+  const [displayNone, setdisplayNone] = useState("block")
+
+  const hideBtn = (val) => {
+    setdisplayNone(val)
+  }
+
   function openNav() {
     document.getElementById("myNav").style.width = "100%";
     setTimeout(() => {
@@ -27,13 +34,13 @@ const Navbar = () => {
 
       <div className="navigation-container">
         <div className="nav-container">
-          <div>
-            <NavLink to="/" activeClassName="active" className="nav-link">
+          <div >
+            <NavLink to="/" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
               Home
             </NavLink>
           </div>
           <div>
-            <NavLink to="/about" activeClassName="active" className="nav-link">
+            <NavLink to="/about" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
               About
             </NavLink>
           </div>
@@ -42,6 +49,7 @@ const Navbar = () => {
               to="/product"
               activeClassName="active"
               className="nav-link"
+              onClick={() => hideBtn("block")}
             >
               Product
             </NavLink>
@@ -51,11 +59,21 @@ const Navbar = () => {
               to="/contact"
               activeClassName="active"
               className="nav-link"
+              onClick={() => hideBtn("block")}
             >
               Contact
             </NavLink>
           </div>
-          <div className="login-btn">LOG IN</div>
+          <div onClick={() => hideBtn("none")} style={{ display: displayNone }}>
+            <Link
+              to="/login"
+              className="login-btn"
+            >
+              <div className="nav-link-login">
+                Login
+              </div>
+            </Link>
+          </div>
           <div className="cart-container">
             <div className="cart-logo">
               <img src={shoppingCart} alt="Cart" />
@@ -86,7 +104,7 @@ const Navbar = () => {
             <div class="overlay-content">
               <div className="menu-content">
                 <div>
-                  <NavLink to="/" activeClassName="active" className="nav-link" onClick={closeNav}>
+                  <NavLink to="/" activeClassName="active" className="nav-link" onClick={() => { hideBtn("block"), closeNav() }}>
                     Home
                   </NavLink>
                 </div>
@@ -95,7 +113,7 @@ const Navbar = () => {
                     to="/about"
                     activeClassName="active"
                     className="nav-link"
-                    onClick={closeNav}
+                    onClick={() => { hideBtn("block"), closeNav() }}
                   >
                     About
                   </NavLink>
@@ -105,7 +123,7 @@ const Navbar = () => {
                     to="/product"
                     activeClassName="active"
                     className="nav-link"
-                    onClick={closeNav}
+                    onClick={() => { hideBtn("block"), closeNav() }}
                   >
                     Product
                   </NavLink>
@@ -115,12 +133,20 @@ const Navbar = () => {
                     to="/contact"
                     activeClassName="active"
                     className="nav-link"
-                    onClick={closeNav}
+                    onClick={() => { hideBtn("block"), closeNav() }}
                   >
                     Contact
                   </NavLink>
                 </div>
-                <div className="login-btn">LOG IN</div>
+                <Link
+                  to="/login"
+                  className="nav-link-login"
+                  onClick={() => { hideBtn("none"), closeNav() }} style={{ display: displayNone }}
+                >
+                  <div className="login-btn" >
+                    Login
+                  </div>
+                </Link>
                 <div className="cart-container">
                   <div className="cart-logo">
                     <img
