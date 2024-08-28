@@ -66,6 +66,37 @@
     font-weight: 600;
 }
 
+.google-login-container
+{
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.678);
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.google-login-container:hover
+{
+ background-color: #faf5f5;
+}
+
+.google-login-container img
+{
+    height: 20px ;
+}
+
+.google-login-txt
+{
+    font-size: 15px;
+    font-weight: 600;
+}
+
 @media (max-width:430px) {
     .signup-container
     {
