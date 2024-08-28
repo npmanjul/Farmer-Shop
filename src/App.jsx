@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react"; // Import useEffect from react
+import { useEffect, useState } from "react"; // Import useEffect from react
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Contact from "./Pages/Contact";
@@ -11,18 +11,26 @@ import Navbar from "./components/Common/Navbar";
 import Footer from "./components/Common/Footer/Footer";
 import Login from "./Pages/Login_signup/Login";
 import Signup from "./Pages/Login_signup/Signup";
+import Profile from "./Pages/Profile";
+import { auth } from "./Pages/Login_signup/firebase";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
   
   useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls to the top of the page when the pathname changes
+    window.scrollTo(0, 0);
   }, [pathname]);
   
   return null;
 }
 
 function App() {
+  const [user,setUser]=useState();
+  useEffect(()=>{
+    auth.onAuthStateChanged((user)=>{
+      setUser(user)
+    })
+  })
   return (
     <>
       <Router>
@@ -35,6 +43,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup/>} />
+          <Route path="/profile" element={<Profile/>} />
+          
           {/* <Route path='/singleproduct/:id' element={<Singleproduct />} /> */}
           <Route path="*" element={<Error />} />
         </Routes>
