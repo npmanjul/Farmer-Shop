@@ -9,6 +9,7 @@ import { setDoc, doc } from "firebase/firestore";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { google } from "../../assets/image";
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -16,6 +17,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -60,7 +62,9 @@ const Signup = () => {
         toast.success("User logged in successfully", {
           position: "top-center",
         });
-        window.location.href = "/profile";
+        // window.location.href = "/profile";
+        navigate('/profile');
+
       }
     } catch (error) {
       console.log(error.message);
