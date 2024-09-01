@@ -7,7 +7,7 @@ import Contact from "./Pages/Contact";
 import About from './Pages/About';
 import Error from "./Pages/Error";
 // import Singleproduct from './Pages/Singleproduct';
-import Navbar from "./components/Common/Navbar";
+import Navbar from "./components/Common/Navbar/Navbar";
 import Footer from "./components/Common/Footer/Footer";
 import Login from "./Pages/Login_signup/Login";
 import Signup from "./Pages/Login_signup/Signup";

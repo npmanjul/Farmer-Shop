@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./navbar.css";
+import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
-import { logo, menuLine, shoppingCart } from '../../assets/image'
+import { logo, menuLine, shoppingCart } from '../../../assets/image'
 
 const Navbar = () => {
   const [displayNone, setdisplayNone] = useState("block");
