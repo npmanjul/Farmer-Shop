@@ -1,50 +1,100 @@
-.Home_gov_scheme_wrapper
-{
-    width: 100%;
+.Home_gov_scheme_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Home_gov_scheme_container
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Home_gov_scheme_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: row-reverse; */
+  width: 80%;
+  gap: 6rem;
+  margin: 40px 20px;
+  max-width: 1500px;
 }
 
-.Home_gov_scheme_left img
-{
-    width: 700px;
-    pointer-events: none;
+.Home_gov_scheme_left img {
+  width: 900px;
+  pointer-events: none;
+  border-radius: 25px;
 }
 
-.Home_gov_scheme_Right
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Home_gov_scheme_Right {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.Home_gov_scheme_heading {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: start;
+}
+
+.Home_gov_scheme_explore_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+}
+
+.Home_gov_scheme_explore_btn button {
+  height: auto;
+  width: auto;
+  padding: 15px 25px;
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+@media (max-width: 1440px) {
+  .Home_gov_scheme_container {
+    width: 90%;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1160px) {
+  .Home_gov_scheme_container {
     flex-direction: column;
-}
+    gap: 2rem;
+  }
 
-.Home_gov_scheme_heading
-{
-    font-size: 2.7rem;
-    font-weight: 600;
-    width: 60%;
-}
+  .Home_gov_scheme_left img {
+    width: auto;
+    pointer-events: none;
+    border-radius: 25px;
+  }
 
-.Home_gov_scheme_explore_btn
-{
-    display: flex;
-    justify-content: center;
+  .Home_gov_scheme_Right {
     align-items: center;
+ 
+  }
+  
+  .Home_gov_scheme_heading {
+    text-align: center;
+  }
 }
 
-.Home_gov_scheme_explore_btn button
-{
-   height: auto;
-   width: auto;
-   padding: 15px 25px;
-   background-color: green;
-   color: white;
-   font-weight: 600;
-   border-radius: 50px;
+@media (max-width:600px) {
+    .Home_gov_scheme_heading {
+       font-size: 2.5rem;
+      }
 }
+@media (max-width:450px) {
+    .Home_gov_scheme_heading {
+       font-size: 2rem;
+       font-weight: 700;
+      }
+
+      .Home_gov_scheme_container {
+        gap: 1rem;
+      }
+}
+
+

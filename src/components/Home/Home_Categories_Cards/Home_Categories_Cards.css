@@ -23,6 +23,8 @@
     padding-top: 2rem;
     gap: 4rem ;
     width: 90%;
+    max-width: 1400px;
+
 }
 
 .Home-Shopcards-box

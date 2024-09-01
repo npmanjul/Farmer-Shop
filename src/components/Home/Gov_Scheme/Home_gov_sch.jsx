@@ -12,7 +12,7 @@ const Home_gov_sch = () => {
           <img src={Home_gov_scheme_img}/>
           </div>
           <div className='Home_gov_scheme_Right'>
-          <div className='Home_gov_scheme_heading'>Discover Goverment Schemes For You..</div>
+          <div className='Home_gov_scheme_heading'>Discover Goverment Schemes For You</div>
           <div className='Home_gov_scheme_explore_btn' >
             <button>Explore more....</button>
           </div>
