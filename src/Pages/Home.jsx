@@ -1,19 +1,16 @@
 import React from 'react';
-import Blank from '../components/Common/Blank';
-import Homecarousal from '../components/Home/Homecarousal';
-import '../components/Home/homecarousal.css'
-import Shopcards from '../components/Home/ShopCards/Shopcards';
-import Government_scheme from '../Goverment Scheme/Components/Government_scheme';
-
-
+import Homecarousal from '../components/Home/Home_Carousal/Homecarousal';
+import Home_Categories_Card from '../components/Home/Home_Categories_Cards/Home_Categories_Card';
+import Home_gov_sch from '../components/Home/Gov_Scheme/Home_gov_sch';
+import Home_Cold_Storage from '../components/Home/Home_Cold Storage/Home_Cold_Storage';
 
 const Home = () => {
   return (
     <>
-      <Blank/>
       <div className="homecarousal-container"><Homecarousal/></div>
-      <Shopcards/>
-     <Government_scheme/>
+      <Home_Categories_Card/>
+      <Home_Cold_Storage/>
+      <Home_gov_sch/>
 
      
     </>

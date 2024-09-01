@@ -1,10 +1,11 @@
 import React from 'react'
-import Blank from '../components/Common/Blank'
-import ProductDescription from '../components/ProductDescription/ProductDescription'
+
+import ProductDescription from '../components/Farm_Store/ProductDescription/ProductDescription'
+
+
 const Product = () => {
   return (
     <>
-<Blank/>
     <div>Product</div>
     <ProductDescription/>
     </>

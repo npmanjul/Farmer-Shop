@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Blank from "../../components/Common/Blank";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import { google } from "../../assets/image";
@@ -54,7 +53,6 @@ const Login = () => {
 
   return (
     <>
-      <Blank />
       <div className="login-wrapper">
         <div className="login-container">
           <h2 >Login</h2>

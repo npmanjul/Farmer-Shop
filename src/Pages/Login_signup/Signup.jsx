@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import { Link } from "react-router-dom";
-import Blank from "../../components/Common/Blank";
 import { auth, db } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import {  signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -76,7 +75,6 @@ const Signup = () => {
 
   return (
     <>
-      <Blank />
       <div className="signup-wrapper">
         <ToastContainer />
         <div className="signup-container">

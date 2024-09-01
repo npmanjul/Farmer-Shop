@@ -51,7 +51,6 @@ const Profile = () => {
 
   return (
     <div>
-      <Blank />
       {userDetails ? (
         <>
           <h1>

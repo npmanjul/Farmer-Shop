@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"; // Import useEffect from react
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Contact from "./Pages/Contact";
-import About from './Pages/About';
+import Gov_scheme from './Pages/Government_scheme';
 import Error from "./Pages/Error";
 // import Singleproduct from './Pages/Singleproduct';
 import Navbar from "./components/Common/Navbar/Navbar";
@@ -13,6 +13,7 @@ import Login from "./Pages/Login_signup/Login";
 import Signup from "./Pages/Login_signup/Signup";
 import Profile from "./Pages/Profile";
 import { auth } from "./Pages/Login_signup/firebase";
+import Blank from "./components/Common/Blank";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -34,11 +35,12 @@ function App() {
   return (
     <>
       <Router>
-        <ScrollToTop /> {/* Place ScrollToTop outside of Routes */}
+        <ScrollToTop /> 
         <Navbar />
+        <Blank/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/gov_scheme" element={<Gov_scheme />} />
           <Route path="/product" element={<Product />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />

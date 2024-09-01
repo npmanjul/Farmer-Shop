@@ -1,0 +1,51 @@
+.Home-Shopcards-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Home-Shopcards-heading
+{
+    font-size: 2rem;
+    font-weight: 600;
+    padding-top: 2rem;
+}
+
+.Home-Shopcards-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5rem 0;
+    padding-top: 2rem;
+    gap: 4rem ;
+    width: 90%;
+}
+
+.Home-Shopcards-box
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.Home-Shopcards-box-image img
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);  
+    pointer-events: none;
+}
+
+.Home-Shopcards-box-title
+{
+    font-size: 17px;
+    font-weight: 600;
+    padding-top: 10px;
+}

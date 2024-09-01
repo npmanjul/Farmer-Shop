@@ -1,0 +1,50 @@
+.Home_gov_scheme_wrapper
+{
+    width: 100%;
+}
+
+.Home_gov_scheme_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home_gov_scheme_left img
+{
+    width: 700px;
+    pointer-events: none;
+}
+
+.Home_gov_scheme_Right
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Home_gov_scheme_heading
+{
+    font-size: 2.7rem;
+    font-weight: 600;
+    width: 60%;
+}
+
+.Home_gov_scheme_explore_btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home_gov_scheme_explore_btn button
+{
+   height: auto;
+   width: auto;
+   padding: 15px 25px;
+   background-color: green;
+   color: white;
+   font-weight: 600;
+   border-radius: 50px;
+}

@@ -34,8 +34,8 @@ const Navbar = () => {
             Home
           </NavLink>
 
-          <NavLink to="/about" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
-            About
+          <NavLink to="/gov_scheme" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
+            Schemes
           </NavLink>
 
           {/* Dropdown Menu */}
