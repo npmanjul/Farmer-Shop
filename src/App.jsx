@@ -14,43 +14,52 @@ import Signup from "./Pages/Login_signup/Signup";
 import Profile from "./Pages/Profile";
 import { auth } from "./Pages/Login_signup/firebase";
 import Blank from "./components/Common/Blank";
+import Card from "./components/Farm_Store/Card";
+import ProductDescription from "./components/Farm_Store/ProductDescription/ProductDescription";
+import Market_place from "./Pages/Market_place";
+import CropSellerForm from "./Pages/CropSellerForm";
+import BuyerRequirementForm from "./Pages/BuyerRequirementForm";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  
+
   return null;
 }
 
 function App() {
-  const [user,setUser]=useState();
-  useEffect(()=>{
-    auth.onAuthStateChanged((user)=>{
+  const [user, setUser] = useState();
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
       setUser(user)
     })
   })
   return (
     <>
       <Router>
-        <ScrollToTop /> 
+        <ScrollToTop />
         <Navbar />
-        <Blank/>
+        <Blank />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gov_scheme" element={<Gov_scheme />} />
           <Route path="/product" element={<Product />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/card/:id" element={<ProductDescription />} />
+          <Route path="/card" element={<Card />} />
+          <Route path="/cropSellerForm" element={<CropSellerForm/>}/>
+          <Route path="/buyerRequirementForm" element={<BuyerRequirementForm/>}/>
+          <Route path="/marketplace" element={<Market_place />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup/>} />
-          <Route path="/profile" element={<Profile/>} />
-          
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+
           {/* <Route path='/singleproduct/:id' element={<Singleproduct />} /> */}
           <Route path="*" element={<Error />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </>
   );

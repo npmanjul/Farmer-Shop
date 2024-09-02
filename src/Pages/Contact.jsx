@@ -1,11 +1,14 @@
 import React from 'react'
-import Blank from '../components/Common/Blank'
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
+  
+
   return (
     <>
-    <Blank/>
-      <div>Contact page</div>
+      <div>
+      contact Pages
+      </div>
     </>
   )
 }

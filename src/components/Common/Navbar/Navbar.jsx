@@ -61,8 +61,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          <NavLink to="/contact" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
-            Contact
+          <NavLink to="/marketplace" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
+            Market Place
           </NavLink>
 
           <div onClick={() => hideBtn("none")} style={{ display: displayNone }}>
@@ -129,12 +129,12 @@ const Navbar = () => {
                 </div>
 
                 <NavLink
-                  to="/contact"
+                  to="/marketplace"
                   activeClassName="active"
                   className="nav-link"
                   onClick={() => {{hideBtn("block"), closeNav()}}}
                 >
-                  Contact
+                  Market Place
                 </NavLink>
 
                 <Link
