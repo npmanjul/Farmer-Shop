@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home_gov_sch.css'
 import {Home_gov_scheme_img} from '../../../assets/image'
+import { NavLink } from 'react-router-dom'
 
 
 const Home_gov_sch = () => {
@@ -14,7 +15,7 @@ const Home_gov_sch = () => {
           <div className='Home_gov_scheme_Right'>
           <div className='Home_gov_scheme_heading'>Discover Goverment Schemes For You..</div>
           <div className='Home_gov_scheme_explore_btn' >
-            <button>Explore more....</button>
+           <NavLink to={"./gov_scheme"}  > <button>Explore more....</button></NavLink>
           </div>
           </div>
         </div>
