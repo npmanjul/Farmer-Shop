@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "./firebase";
-import './Login.css'
 import { ToastContainer, toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
@@ -54,7 +53,7 @@ function LoginTesting() {
     return (
         <div className='flex items-center justify-center h-screen py-16 bg-emerald-600 px-8'>
             <div className="flex  bg-gradient-to-br from-green-200 to-yellow-200 rounded-lg shadow-lg overflow-hidden mx-auto  lg:w-full max-w-4xl sm:w-1/2 w-full">
-                <div className="hidden lg:block lg:w-1/2 bg-cover backgroundImageLogin border-r-2 border-emerald-600"
+                <div className="hidden lg:block lg:w-1/2 bg-cover bg-backgroundImageLogin bg-no-repeat bg-center border-r-2 border-emerald-600"
 
                 />
                 <div className="w-full p-8 lg:w-1/2 lg:py-16">

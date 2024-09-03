@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
 import { logo, menuLine, shoppingCart } from '../../../assets/image'
