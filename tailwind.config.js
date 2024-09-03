@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'backgroundImageLogin': 'url(./src/image/loginBackground.png)',
+        'backgroundImageLogin': 'url(/loginBackground.png)',
         'backgroundImageSignup': 'url(./src/image/signupBackground.png)',
+        'logo': 'url(/logo.png)',
       },
     },
   },
