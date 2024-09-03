@@ -95,11 +95,11 @@ const Navbar = () => {
             </a>
             <div className="overlay-content">
               <div className="menu-content">
-                <NavLink to="/" activeClassName="active" className="nav-link" onClick={() => {hideBtn("block"), closeNav()}}>
+                <NavLink to="/" activeClassName="active" className="nav-link" onClick={() => { hideBtn("block"), closeNav() }}>
                   Home
                 </NavLink>
 
-                <NavLink to="/about" activeClassName="active" className="nav-link" onClick={() => {hideBtn("block"), closeNav()}}>
+                <NavLink to="/about" activeClassName="active" className="nav-link" onClick={() => { hideBtn("block"), closeNav() }}>
                   About
                 </NavLink>
 
@@ -132,15 +132,14 @@ const Navbar = () => {
                   to="/marketplace"
                   activeClassName="active"
                   className="nav-link"
-                  onClick={() => {{hideBtn("block"), closeNav()}}}
+                  onClick={() => { { hideBtn("block"), closeNav() } }}
                 >
                   Market Place
                 </NavLink>
-
                 <Link
                   to="/login"
                   className="nav-link-login"
-                  onClick={() => {hideBtn("none"), closeNav()}} 
+                  onClick={() => { hideBtn("none"), closeNav() }}
                   style={{ display: displayNone }}
                 >
                   <div className="login-btn">
