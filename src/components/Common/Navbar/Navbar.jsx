@@ -71,12 +71,12 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="cart-container">
+          {/* <div className="cart-container">
             <div className="cart-logo">
               <img src={shoppingCart} alt="Cart" />
             </div>
             <div className="cart-count">10</div>
-          </div>
+          </div> */}
         </div>
 
         <div className="menu-section">

@@ -118,11 +118,13 @@ export default function Market_Place_navigation() {
                   ))} */}
 
                   {/* phone */}
-                  <div className='flex justify-start items-start flex-col gap-4 pt-7 pb-3'>
-                    <button className='bg-green-500 px-6 py-3 font-semibold text-white rounded-[25px]'><Link to='/cropSellerForm'>Registration for Seller</Link></button>
-                    <button className='bg-blue-500 px-6 py-3 font-semibold text-white rounded-[25px]'><Link to='/buyerRequirementForm'>Registration for Buyer</Link></button>
+                  <div className='flex justify-start items-start flex-col gap-4 pt-3 pb-3'>
+                    <Link to='/cropSellerForm'><button className='bg-green-500 px-6 py-3 font-semibold text-white rounded-[25px]'>Registration for Seller</button></Link>
+                    <Link to='/buyerRequirementForm'><button className='bg-blue-500 px-6 py-3 font-semibold text-white rounded-[25px]'>Registration for Buyer</button></Link>
                   </div>
                 </ul>
+
+
 
                 {filters.map((section) => (
                   <Disclosure key={section.id} as="div" className="border-t border-gray-200 px-4 py-6">
@@ -235,9 +237,40 @@ export default function Market_Place_navigation() {
                   ))} */}
                   {/* destop version */}
                   <div className='flex justify-start items-start flex-col gap-4 pt-3 pb-3'>
-                    <button className='bg-green-500 px-6 py-3 font-semibold text-white rounded-[25px]'><Link to='/cropSellerForm'>Registration for Seller</Link></button>
-                    <button className='bg-blue-500 px-6 py-3 font-semibold text-white rounded-[25px]'><Link to='/buyerRequirementForm'>Registration for Buyer</Link></button>
+                    <Link to='/cropSellerForm'><button className='bg-green-500 px-6 py-3 font-semibold text-white rounded-[25px]'>Registration for Seller</button></Link>
+                    <Link to='/buyerRequirementForm'><button className='bg-blue-500 px-6 py-3 font-semibold text-white rounded-[25px]'>Registration for Buyer</button></Link>
                   </div>
+                </ul>
+                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+                  <form class="max-w-sm mx-auto pt-3">
+                    {/* <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Select Your State</label> */}
+                    <select
+                      id="countries"
+                      class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                      <option selected>Choose a State</option>
+                      <option value="US">Uttar Pradesh</option>
+                      <option value="CA">Tamil Nadu</option>
+                      <option value="FR">J&K</option>
+                      <option value="DE">Bihar</option>
+                    </select>
+                  </form>
+                </ul>
+
+                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+
+                  <form class="max-w-sm mx-auto pt-3">
+                    {/* <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Select Your City</label> */}
+                    <select
+                      id="countries"
+                      class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    >
+                      <option selected>Choose a City</option>
+                      <option value="US">Kanpur</option>
+                      <option value="CA">Prayagraj</option>
+                      <option value="FR">Lucknow</option>
+                      <option value="DE">Gorakhpur</option>
+                    </select>
+                  </form>
                 </ul>
 
 
