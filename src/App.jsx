@@ -19,6 +19,7 @@ import ProductDescription from "./components/Farm_Store/ProductDescription/Produ
 import Market_place from "./Pages/Market_place";
 import CropSellerForm from "./Pages/CropSellerForm";
 import BuyerRequirementForm from "./Pages/BuyerRequirementForm";
+import Cold_storage from './Pages/Cold_storage'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -55,6 +56,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/cold_storage" element={<Cold_storage/>}/>
 
           {/* <Route path='/singleproduct/:id' element={<Singleproduct />} /> */}
           <Route path="*" element={<Error />} />

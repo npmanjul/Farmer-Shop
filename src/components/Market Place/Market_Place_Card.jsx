@@ -1,3 +1,4 @@
+import  Market_place_Rating  from "./Market_place_Rating";
 import React from "react";
 
 const market_products = [
@@ -117,7 +118,7 @@ const Market_Place_Card = () => {
                       Rs {market_product.product_price} (Per Kg)
                     </span>{" "}
                   </div>
-                  <div>Rating</div>
+                  <div><Market_place_Rating/></div>
                 </div>
                 <div className="flex justify-center items-center gap-4">
                   <div className="font-semibold text-black">

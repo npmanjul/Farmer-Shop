@@ -38,6 +38,11 @@ const Navbar = () => {
             Schemes
           </NavLink>
 
+
+          <NavLink to="/cold_storage" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
+          Cold Storage
+          </NavLink>
+
           {/* Dropdown Menu */}
           <div className="dropdown-container">
             <NavLink
