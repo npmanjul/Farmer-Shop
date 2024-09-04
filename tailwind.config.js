@@ -9,6 +9,7 @@ export default {
       backgroundImage: {
         'backgroundImageLogin': 'url(/loginBackground.png)',
         'backgroundImageSignup': 'url(./src/image/signupBackground.png)',
+        'logo': 'url(/logo.png)',
       },
     },
   },

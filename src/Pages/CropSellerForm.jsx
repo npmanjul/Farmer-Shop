@@ -1,27 +1,40 @@
 import React, { useState } from 'react';
+import useLocalStorage from '../lib/hooks/useLocalStorage';
+import { v4 as uuidv4 } from 'uuid';
 
 function CropSellerForm() {
+  const [market_products, setMarketProducts] = useLocalStorage("market_products")
   const [formData, setFormData] = useState({
-    fullName: '',
-    contactNumber: '',
-    email: '',
-    address: '',
-    state: '',
-    city: '',
-    cropName: '',
-    variety: '',
-    quantity: '',
-    price: '',
-    harvestDate: '',
-    saleFromDate: '',
-    marketPreference: 'Local Market',
-    organic: 'No',
-    pesticidesUsed: 'No',
-    cropCondition: 'A-Grade',
-    transportation: 'No',
-    additionalNotes: '',
-    photos: null,
+    productId: uuidv4(),
+    sellerId: uuidv4(),
+    name: "",
+    description: "",
+    certification: "",
+    harvestDate: new Date().toISOString(),
+    price: "",
+    negotiable: false,
+    quantity: 0,
+    status: "",
+    isFrozen: false,
+    farmFresh: false,
+    flavor: "",
+    variety: "",
+    images: [],
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
   });
+  const [location, setLocation] = useState({
+    city: "",
+    state: "",
+    zip: ""
+  });
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -33,143 +46,78 @@ function CropSellerForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    if (selectedFile) {
+
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const fileData = e.target.result;
+        const fileMetadata = {
+          name: selectedFile.name,
+          type: selectedFile.type,
+          data: fileData
+        };
+
+        localStorage.setItem(`images-${fileMetadata.name}`, JSON.stringify(fileMetadata));
+        const images = [`images-${fileMetadata.name}`];
+        const newData = {
+          ...formData,
+          images,
+          location,
+          productId: crypto.randomUUID(),
+          sellerId: crypto.randomUUID(),
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          harvestDate: new Date().toISOString(),
+        }
+        setMarketProducts([...market_products, newData]);
+      };
+
+      reader.readAsDataURL(selectedFile);
+    }
+
     alert('Form submitted!');
   };
+
+  const handleLocation = (e) => {
+    const { name, value } = e.target;
+    setLocation({
+      ...location,
+      [name]: value
+    })
+  }
 
   return (
     <form className="max-w-[50rem] mx-auto bg-white p-6 rounded-lg shadow-md my-[3rem]" onSubmit={handleSubmit}>
       <h2 className="text-2xl font-bold mb-4 text-center">Crop Seller Form</h2>
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Full Name:</label>
-        <input
-          type="text"
-          name="fullName"
-          value={formData.fullName}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Full Name" name="sellername" type="text" value={formData.sellerName} handleChange={handleChange} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Contact Number:</label>
-        <input
-          type="tel"
-          name="contactNumber"
-          value={formData.contactNumber}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Contact Number" name="contactNumber" type="tel" value={formData.contactNumber} handleChange={handleChange} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Email Address (Optional):</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Email Address (Optional)" name="email" type="email" value={formData.email} handleChange={handleChange} required={false} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Address:</label>
-        <input
-          type="text"
-          name="address"
-          value={formData.address}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="City" name="city" type="text" value={location.city}
+        handleChange={handleLocation} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">State:</label>
-        <input
-          type="text"
-          name="state"
-          value={formData.state}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="State" name="state" type="text" value={location.state}
+        handleChange={handleLocation} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">City/District:</label>
-        <input
-          type="text"
-          name="city"
-          value={formData.city}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Zip Code" name="zip" type="text" value={location.zip}
+        handleChange={handleLocation} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Crop Name:</label>
-        <input
-          type="text"
-          name="cropName"
-          value={formData.cropName}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Variety:</label>
-        <input
-          type="text"
-          name="variety"
-          value={formData.variety}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Crop Name" name="name" type="text" value={formData.name} handleChange={handleChange} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Quantity Available (in Quintals):</label>
-        <input
-          type="number"
-          name="quantity"
-          value={formData.quantity}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Variety" name="variety" type="text" value={formData.variety} handleChange={handleChange} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Expected Price per Quintal (in INR):</label>
-        <input
-          type="number"
-          name="price"
-          value={formData.price}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Quantity Available (in Quintals)" name="quantity" type="number" value={formData.quantity} handleChange={handleChange} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Harvest Date:</label>
-        <input
-          type="date"
-          name="harvestDate"
-          value={formData.harvestDate}
-          onChange={handleChange}
-          required
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Expected Price per Quintal (in INR)" name="price" type="number" value={formData.price} handleChange={handleChange} required={true} />
+
+      <Input label="Harvest Date" name="harvestDate" type="date" value={formData.harvestDate} handleChange={handleChange} required={true} />
+
 
       <div className="mb-4">
         <label className="block text-gray-700">Available for Sale From:</label>
@@ -183,116 +131,15 @@ function CropSellerForm() {
         />
       </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Preferred Selling Market:</label>
-        <select
-          name="marketPreference"
-          value={formData.marketPreference}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        >
-          <option value="Local Market">Local Market</option>
-          <option value="Big Market">Big Market</option>
-        </select>
-      </div>
+      <Radio label="Organic Certification" name="organic" value={formData.organic} handleChange={handleChange} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Organic Certification:</label>
-        <div className="flex items-center space-x-4 mt-1">
-          <label>
-            <input
-              type="radio"
-              name="organic"
-              value="Yes"
-              checked={formData.organic === 'Yes'}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="organic"
-              value="No"
-              checked={formData.organic === 'No'}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            No
-          </label>
-        </div>
-      </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Any Pesticides Used:</label>
-        <div className="flex items-center space-x-4 mt-1">
-          <label>
-            <input
-              type="radio"
-              name="pesticidesUsed"
-              value="Yes"
-              checked={formData.pesticidesUsed === 'Yes'}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="pesticidesUsed"
-              value="No"
-              checked={formData.pesticidesUsed === 'No'}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            No
-          </label>
-        </div>
-      </div>
+      <Radio label="Pesticides Used" name="pesticidesUsed" value={formData.pesticidesUsed} handleChange={handleChange} required={true} />
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Crop Condition/Grade:</label>
-        <select
-          name="cropCondition"
-          value={formData.cropCondition}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        >
-          <option value="A-Grade">A-Grade</option>
-          <option value="B-Grade">B-Grade</option>
-          <option value="C-Grade">C-Grade</option>
-        </select>
-      </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Transportation Availability:</label>
-        <div className="flex items-center space-x-4 mt-1">
-          <label>
-            <input
-              type="radio"
-              name="transportation"
-              value="Yes"
-              checked={formData.transportation === 'Yes'}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="transportation"
-              value="No"
-              checked={formData.transportation === 'No'}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            No
-          </label>
-        </div>
-      </div>
+
+
+      <Radio label="Transportation Availability" name="transportation" value={formData.transportation} handleChange={handleChange} required={true} />
 
       <div className="mb-4">
         <label className="block text-gray-700">Additional Notes or Special Instructions:</label>
@@ -304,15 +151,7 @@ function CropSellerForm() {
         />
       </div>
 
-      <div className="mb-4">
-        <label className="block text-gray-700">Upload Photos of Crop (Optional):</label>
-        <input
-          type="file"
-          name="photos"
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded mt-1"
-        />
-      </div>
+      <Input label="Upload Photos of Crop (Optional)" name="images" type="file" handleChange={handleFileChange} required={false} />
 
       <div className="mb-4">
         <label className="flex items-center">
@@ -329,3 +168,53 @@ function CropSellerForm() {
 }
 
 export default CropSellerForm;
+
+
+function Input({ label, name, type, value, handleChange, required }) {
+  return (
+    <div className="mb-4">
+      <label className="block text-gray-700">{label}:</label>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={handleChange}
+        required={required}
+        className="w-full p-2 border border-gray-300 rounded mt-1"
+      />
+    </div>
+  );
+}
+
+function Radio({ label, name, value, handleChange, required }) {
+  return (
+    <div className="mb-4">
+      <label className="block text-gray-700">{label}:</label>
+      <div className="flex items-center space-x-4 mt-1">
+        <label>
+          <input
+            type="radio"
+            name={name}
+            value="Yes"
+            checked={value === 'Yes'}
+            onChange={handleChange}
+            className="mr-2"
+          />
+          Yes
+        </label>
+        <label>
+          <input
+            type="radio"
+            name={name}
+            value="No"
+            checked={value === 'No'}
+            onChange={handleChange}
+            className="mr-2"
+          />
+          No
+        </label>
+      </div>
+    </div>
+  );
+}
+
