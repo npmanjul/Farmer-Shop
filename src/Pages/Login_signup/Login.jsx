@@ -12,26 +12,10 @@ function Login() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const handleSubmit = async (e) => {
-            e.preventDefault();
 
-            try {
-                await signInWithEmailAndPassword(auth, email, password);
-                console.log("User logged in successfully");
-                // window.location.href = "/profile";
-                navigate("/profile");
-                toast.success("User logged in successfully!", {
-                    position: "top-center",
-                });
-            } catch (error) {
-                console.log(error.message);
-                toast.error("Login failed: " + error.message, {
-                    position: "bottom-center",
-                });
-            }
-        };
         try {
             await signInWithEmailAndPassword(auth, email, password);
             console.log("User logged in successfully");
@@ -47,6 +31,7 @@ function Login() {
             });
         }
     };
+
 
     const googleLogin = async () => {
         const provider = new GoogleAuthProvider();
