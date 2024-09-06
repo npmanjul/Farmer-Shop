@@ -4,5 +4,6 @@ import shoppingCart from '../image/shopping-cart-2-line.png'
 import google from '../image/google.png'
 import Home_gov_scheme_img from '../image/Gov_scheme.png'
 import cold_storage from '../image/cold_storage.png'
+import farmer from '../image/field.png'
 
-export {logo,menuLine,shoppingCart,google,Home_gov_scheme_img,cold_storage}
+export {logo,menuLine,shoppingCart,google,Home_gov_scheme_img,cold_storage,farmer}

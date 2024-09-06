@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
-import { logo, menuLine, shoppingCart } from '../../../assets/image'
+import { menuLine, shoppingCart } from '../../../assets/image'
 
 const Navbar = () => {
   const [displayNone, setdisplayNone] = useState("block");
@@ -23,11 +23,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar-container">
-      <div className="nav-icon">
-        <img src={logo} alt="Logo" />
-      </div>
 
+    <div className="navbar-container bg-gradient-to-br from-green-50 to-yellow-50 ">
+      <NavLink to="/"><div className="bg-logo bg-cover bg-center size-16 bg-green-50 rounded-full  border-2 border-emerald-500 z-50" />
+      </NavLink>
       <div className="navigation-container">
         <div className="nav-container">
           <NavLink to="/" activeClassName="active" className="nav-link" onClick={() => hideBtn("block")}>
@@ -85,26 +84,26 @@ const Navbar = () => {
         </div>
 
         <div className="menu-section">
-          <button onClick={openNav} id="menu_line">
-            <img src={menuLine} alt="Menu" />
+          <button onClick={openNav} id="menu_line" className="p-4 rounded-lg bg-yellow-100 ">
+            <img src={menuLine} alt="Menu" className="size-8" />
           </button>
         </div>
 
         <div className="Curtain_Menu">
           <div id="myNav" className="overlay">
             <div className="menu-top">
-              <img src={logo} alt="Logo" />
+
             </div>
             <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>
               &times;
             </a>
             <div className="overlay-content">
               <div className="menu-content">
-                <NavLink to="/" activeClassName="active" className="nav-link" onClick={() => {hideBtn("block"), closeNav()}}>
+                <NavLink to="/" activeClassName="active" className="nav-link" onClick={() => { hideBtn("block"), closeNav() }}>
                   Home
                 </NavLink>
 
-                <NavLink to="/about" activeClassName="active" className="nav-link" onClick={() => {hideBtn("block"), closeNav()}}>
+                <NavLink to="/about" activeClassName="active" className="nav-link" onClick={() => { hideBtn("block"), closeNav() }}>
                   About
                 </NavLink>
 
@@ -137,15 +136,14 @@ const Navbar = () => {
                   to="/marketplace"
                   activeClassName="active"
                   className="nav-link"
-                  onClick={() => {{hideBtn("block"), closeNav()}}}
+                  onClick={() => { { hideBtn("block"), closeNav() } }}
                 >
                   Market Place
                 </NavLink>
-
                 <Link
                   to="/login"
                   className="nav-link-login"
-                  onClick={() => {hideBtn("none"), closeNav()}} 
+                  onClick={() => { hideBtn("none"), closeNav() }}
                   style={{ display: displayNone }}
                 >
                   <div className="login-btn">

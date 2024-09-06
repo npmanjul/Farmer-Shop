@@ -242,11 +242,11 @@ export default function Market_Place_navigation() {
                   </div>
                 </ul>
                 <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-                  <form class="max-w-sm mx-auto pt-3">
-                    {/* <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Select Your State</label> */}
+                  <form className="max-w-sm mx-auto pt-3">
+                    {/* <label for="countries" className="block mb-2 text-sm font-medium text-gray-900">Select Your State</label> */}
                     <select
                       id="countries"
-                      class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                      className="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                       <option selected>Choose a State</option>
                       <option value="US">Uttar Pradesh</option>
                       <option value="CA">Tamil Nadu</option>
@@ -258,11 +258,11 @@ export default function Market_Place_navigation() {
 
                 <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
 
-                  <form class="max-w-sm mx-auto pt-3">
-                    {/* <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Select Your City</label> */}
+                  <form className="max-w-sm mx-auto pt-3">
+                    {/* <label for="countries" className="block mb-2 text-sm font-medium text-gray-900">Select Your City</label> */}
                     <select
                       id="countries"
-                      class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      className="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     >
                       <option selected>Choose a City</option>
                       <option value="US">Kanpur</option>
