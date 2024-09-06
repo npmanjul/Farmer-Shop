@@ -19,7 +19,7 @@ import CropSellerForm from "./Pages/CropSellerForm";
 import BuyerRequirementForm from "./Pages/BuyerRequirementForm";
 import Cold_storage from './Pages/Cold_storage'
 import Login from "./Pages/Login_signup/Login";
-
+import AllProduct from "./components/Farm_Store/Products/Allproducts";
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -48,6 +48,7 @@ function App() {
           <Route path="/gov_scheme" element={<Gov_scheme />} />
           <Route path="/product" element={<Product />} />
           <Route path="/card/:id" element={<ProductDescription />} />
+          <Route path="/allproducts" element={<AllProduct />} />
           <Route path="/card" element={<Card />} />
           <Route path="/cropSellerForm" element={<CropSellerForm />} />
           <Route path="/buyerRequirementForm" element={<BuyerRequirementForm />} />

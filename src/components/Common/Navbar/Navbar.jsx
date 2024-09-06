@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Dropdown Menu */}
           <div className="dropdown-container">
             <NavLink
-              to="/product"
+              to="/allproducts"
               activeClassName="active"
               className="nav-link dropdown-product"
               onClick={() => hideBtn("block")}
@@ -53,14 +53,14 @@ const Navbar = () => {
               Product
             </NavLink>
             <div className="dropdown-menu">
-              <NavLink to="/product/feature1" className="dropdown-item">
-                Feature 1
+              <NavLink to="/allproducts" className="dropdown-item">
+                Seeds
               </NavLink>
               <NavLink to="/product/feature2" className="dropdown-item">
-                Feature 2
+                Fertilizer
               </NavLink>
               <NavLink to="/product/feature3" className="dropdown-item">
-                Feature 3
+                Equipments
               </NavLink>
             </div>
           </div>
