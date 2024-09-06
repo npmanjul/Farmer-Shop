@@ -68,7 +68,7 @@ function Login() {
     };
 
     return (
-        <div className='flex items-center justify-center h-screen py-16 bg-emerald-600 px-8'>
+        <div className='flex items-center justify-center  h-[90vh] bg-emerald-600 px-8'>
             <div className="flex  bg-gradient-to-br from-green-200 to-yellow-200 rounded-lg shadow-lg overflow-hidden mx-auto  lg:w-full max-w-4xl sm:w-1/2 w-full">
                 <div className="hidden lg:block lg:w-1/2 bg-cover bg-backgroundImageLogin bg-no-repeat bg-center border-r-2 border-emerald-600"
 
