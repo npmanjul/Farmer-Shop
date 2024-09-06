@@ -1,6 +1,7 @@
 import React from 'react'
 import './Home_Cold_storage.css'
 import {cold_storage} from '../../../assets/image'
+import { Link } from 'react-router-dom'
 
 
 const Home_Cold_Storage = () => {
@@ -12,7 +13,7 @@ const Home_Cold_Storage = () => {
             <div className='Home_cold_storage_heading'>Cold Storage, Made Simple</div>
             <div className='text-[20px] font-semibold'>Streamlined Solutions for Preserving Freshness</div>
             <div className='Home_cold_storage_btn'>
-              <button>Book Your Space Here</button>
+              <Link to="/cold_storage"><button>Book Your Space Here</button></Link>
             </div>
           </div>
           <div className='Home_cold_storage_right'>
