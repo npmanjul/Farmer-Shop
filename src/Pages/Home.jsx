@@ -10,14 +10,11 @@ import Home_hero  from '../image/Home_hero.jpg';
 const Home = () => {
   return (
     <>
-      <div className="homecarousal-container">
-        {/* <Homecarousal /> */}
-        <img src={Home_hero} alt="carousal" className='h-[100vh] w-full'/>
-        </div>
-      <Home_Categories_Card />
-      <Home_Cold_Storage />
-      <Home_gov_sch />
-      <Home_market_place/>
+        <div className="homecarousal-container"><Homecarousal /></div>
+        <Home_Categories_Card />
+        <Home_Cold_Storage />
+        <Home_gov_sch />
+        <Home_market_place />
     </>
   )
 };

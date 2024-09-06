@@ -29,40 +29,25 @@ const sortOptions = [
 // ]
 const filters = [
   {
-    id: 'color',
-    name: 'Color',
+    id: 'Benefit type',
+    name: 'Benefit type',
     options: [
-      { value: 'white', label: 'White', checked: false },
-      { value: 'beige', label: 'Beige', checked: false },
-      { value: 'blue', label: 'Blue', checked: true },
-      { value: 'brown', label: 'Brown', checked: false },
-      { value: 'green', label: 'Green', checked: false },
-      { value: 'purple', label: 'Purple', checked: false },
+      { value: 'cash', label: 'cash', checked: false },
+      { value: 'composite', label: 'composite', checked: false },
+      { value: 'In kind', label: 'In kind', checked: true },
+     
     ],
   },
   {
-    id: 'category',
-    name: 'Category',
+    id: 'Scheme type',
+    name: 'Scheme Type',
     options: [
-      { value: 'new-arrivals', label: 'New Arrivals', checked: false },
-      { value: 'sale', label: 'Sale', checked: false },
-      { value: 'travel', label: 'Travel', checked: true },
-      { value: 'organization', label: 'Organization', checked: false },
-      { value: 'accessories', label: 'Accessories', checked: false },
+      { value: 'Central Sector Scheme', label: 'Central Sector Scheme', checked: false },
+      { value: 'Centrally Sponsored Scheme', label: 'Centrally Sponsored Scheme', checked: false },
+      
     ],
   },
-  {
-    id: 'size',
-    name: 'Size',
-    options: [
-      { value: '2l', label: '2L', checked: false },
-      { value: '6l', label: '6L', checked: false },
-      { value: '12l', label: '12L', checked: false },
-      { value: '18l', label: '18L', checked: false },
-      { value: '20l', label: '20L', checked: false },
-      { value: '40l', label: '40L', checked: true },
-    ],
-  },
+
 ]
 
 function classNames(...classes) {
@@ -208,11 +193,11 @@ export default function Example() {
             <form class="max-w-sm ">
               <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">State</label>
               <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   ">
-                <option selected>Choose a country</option>
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-                <option value="FR">France</option>
-                <option value="DE">Germany</option>
+                <option selected>Choose a state</option>
+                <option value="US">Uttar Pradesh</option>
+                <option value="CA">Bihar</option>
+                <option value="FR">Karnataka</option>
+                <option value="DE">Goa</option>
               </select>
             </form>
           </div>

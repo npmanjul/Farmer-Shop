@@ -9,7 +9,8 @@ const Home_Cold_Storage = () => {
       <div className='Home_cold_storage_wrapper'>
         <div className='Home_cold_storage_container'>
           <div className='Home_cold_storage_left'>
-            <div className='Home_cold_storage_heading'>Cold Storage Made Simple</div>
+            <div className='Home_cold_storage_heading'>Cold Storage, Made Simple</div>
+            <div className='text-[20px] font-semibold'>Streamlined Solutions for Preserving Freshness</div>
             <div className='Home_cold_storage_btn'>
               <button>Book Your Space Here</button>
             </div>
