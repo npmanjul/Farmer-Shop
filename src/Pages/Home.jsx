@@ -4,11 +4,16 @@ import Home_Categories_Card from '../components/Home/Home_Categories_Cards/Home_
 import Home_gov_sch from '../components/Home/Gov_Scheme/Home_gov_sch';
 import Home_Cold_Storage from '../components/Home/Home_Cold Storage/Home_Cold_Storage';
 import Home_market_place from '../components/Home/Home_market_place/Home_market_place';
+import Home_hero  from '../image/Home_hero.jpg';
+
 
 const Home = () => {
   return (
     <>
-      <div className="homecarousal-container"><Homecarousal /></div>
+      <div className="homecarousal-container">
+        {/* <Homecarousal /> */}
+        <img src={Home_hero} alt="carousal" className='h-[100vh] w-full'/>
+        </div>
       <Home_Categories_Card />
       <Home_Cold_Storage />
       <Home_gov_sch />
